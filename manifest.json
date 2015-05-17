@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "icons": { "128": "icon.png" },
+  "name": "Random New Tab",
+  "description": "This extension randomly picks a custom new tab chrome extension, enables it and uses it to display form the custom new tab.",
+  "version": "1.0",
+  "permissions": [ "management", "tabs", "alarms", "storage" ],
+  "options_page": "options.html",
+  "background": {
+      "scripts": ["background.js"]
+  }
+}

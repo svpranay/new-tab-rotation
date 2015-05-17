@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp" ng-csp>
+<head><title>Random Shuffle New Tab</title></head>
+<body>
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+<script src="angular.js"></script>
+<script src="options.js"></script>
+<div style="text-align:center;margin:20px;">
+    <div style="font-family:monospace;font-size:xx-large;">Random Shuffle New Tab</div>
+    <div style="margin:10px;font-size:large;">Select the chrome extensions that you want to rotate to create the custom new tabs each time.</div>
+</div>
+
+
+<div data-ng-controller="ListController" align="center">
+    <div style="">New Tab Extensions Under Rotation :</div>
+
+    <div data-ng-repeat="a in addedList" class="btn btn-small btn-success" style="margin:10px;">
+        <span>{{a.name}}</span>
+    </div>
+
+    <div style="">All Extensions :</div>
+    <table class="table table-striped" style="width:60%">
+        <thead>
+            <td>
+                Name
+            </td>
+            <td>
+                Id
+            </td>
+            <td>
+                Is Enabled
+            </td>
+            <td>
+                Add To Rotation
+            </td>
+        </thead>
+        <tr data-ng-repeat="l in list">
+            <td>
+                {{l.name}}
+            </td>
+            <td>
+                {{l.id}}
+            </td>
+            <td>
+                {{l.enabled}}
+            </td>
+            <td>
+                <button class="btn btn-primary" type="button" data-ng-click="save(l.id, l.name)">Add</button>
+                <button class="btn btn-danger" type="button" data-ng-click="remove(l.id)">Remove</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>
